@@ -14,7 +14,7 @@ Jquery
 
 
 Security
-
+Client’s security is one of our priority. We use password encryption to ensure your password is unclear when it transits to our server.
 
 
 Cookie
@@ -29,3 +29,17 @@ Xampp is a free and open source cross-platform web server solution package. It i
 https://www.apachefriends.org/fr/index.html
 
 MySQL
+We use MySQL to manage your datas. It is an open-source relational database management system.
+
+
+PHP
+We used PHP embedded into HTML code for our back end management. 
+https://secure.php.net
+
+Email
+We use the php technology to notify you by email. 
+
+
+
+
+
