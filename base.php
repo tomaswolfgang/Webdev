@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			
 
 		</head>
 		<body>
@@ -10,6 +9,8 @@
 				<div id="loginbox">
 					<div id="username"></div>
 					<div id="password"></div>
+					<input type="checkbox" id="c1" />Remember Me<br />
+					<input type="submit" id="usersubmit" />
 				</div>
 				<div id="register"></div>
 				<div class="downscrollbutton"></div>
@@ -57,7 +58,22 @@
 
 	<script type="text/javascript">
 	
-
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/login.js"></script>
 	</script>
 
 	<script type="text/javascript" src="js/jquery.min.js?v=1.11.3" async onload="jqloaded=true;onloadCallback()">//async loading of scripts</script>
+	
+	$('#loginsubmit').click(function(){
+	      if($('#c1').is(':checked')) {
+	                var username=$('#usersubmit').val(); 
+	                $.cookie("username", username, { expires: 365 }); 
+	     }
+	}
+
+	$(document).ready(function(){
+	var username=$.cookie("username");
+	if(username!=undefined){
+	     $('#loginsubmit').val(username);   // Display username on input box if avail on cookie.
+	      $('#c1').prop('checked', true);  
+	}
