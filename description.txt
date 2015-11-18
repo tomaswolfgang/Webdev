@@ -1,0 +1,31 @@
+Descriptions of the technologies : 
+
+Front End : 
+Html 5, CSS, CGI
+We used some new features of HTML5 such as email input.
+Email input is know checked by the browser to ensure a valid email address has been entered.
+
+Boostrap
+Bootstrap makes your programmer life easier. We used some buttons pattern to make the visual better. 
+http://getbootstrap.com //make an hyperlink
+
+Jquery
+
+
+
+Security
+
+
+
+Cookie
+We used the Jquery cookie technology to remember the username if the user check the « remember me » box. For security reasons, we decided not to keep the password in the cookie. Nothing is safer than your brain.
+https://github.com/carhartl/jquery-cookie 
+
+
+Back-end
+
+Xampp
+Xampp is a free and open source cross-platform web server solution package. It includes Apache HTTP server, MySQL Database and various interpreters for scripts written in the PHP and Perl programming language.
+https://www.apachefriends.org/fr/index.html
+
+MySQL
