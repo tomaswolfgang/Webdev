@@ -1,20 +1,74 @@
 .pagecontainer{
 	width:100%;
-	height:100%;
+	/* display: block; */
+	/* top: 0; */
+	/* margin-top: -100px; */
+	height: 100%;
+	position: relative;
 	margin: 0;
+	/* text-align: center; */
+	font-family: helvetica, sans-serif;
 	padding: 0;
-	min-width: 100%;
-	min-height: 100%;
-	max-width:100%;
-	max-height:100%;
+	/* min-width: 100%; */
+	/* min-height: 100%; */
+	/* max-width:100%; */
+	/* max-height:100%; */
 }
 
 #welcomecontainer{
-	background-color: black;
+	background-color: #C6DCFF;
 }
 
 #purposecontainer{
 	background-color: red;
+}
+
+div#password {
+    margin-top: 10px;
+}
+
+div#user {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+input#user {
+    width: 80%;
+    margin-left: 10%;
+    background-color: white;
+}
+
+div#contain {
+    width: 40%;
+    height: 270px;
+    min-width: 320px;
+    /* margin: auto; */
+    /* margin-top: 0px; */
+    padding-bottom: 323px;
+    left: 30%;
+    background-color: aliceblue;
+    top: 30%;
+    position: absolute;
+    border-radius: 20px;
+}
+input#pass {
+    width: 80%;
+    margin-left: 10%;
+    background-color: white;
+}
+
+form#login {
+    padding-top: 20px;
+}
+
+label#ulab {
+    margin-left: 5%;
+    font-size: 20px;
+}
+
+label#plab {
+    margin-left: 5%;
+    font-size: 20px;
 }
 
 #technologycontainer{
@@ -27,4 +81,97 @@
 
 #createdContainer{
 	background-color: white;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height:100%;
+}
+
+body{
+	height:100%;
+}
+
+
+
+div#welcome {
+Position: absolute;left: 30%;top: 20%;color: #6E81FF;font-size: 40px;font-family: Helvetica;}
+
+#weltitle{
+	font-size: 40px;
+}
+
+input.btn.btn-default {
+    position: absolute;
+    right: 30px;
+    margin-top: 20px;
+    height: 60px;
+    width: 120px;
+    background-color: rgba(109, 182, 255, 0.59);
+    border-radius: 10px;
+}
+
+div#loginbox {
+    width: 500px;
+    margin: auto;
+    /* margin-left: 25%; */
+    height: 300px;
+    position: relative;
+    background-color: white;
+    /* margin-top: 50%; */
+}
+
+form#login {
+    font-family: helvetica, sans-serif;
+}
+
+div#register {
+    width: 90%;
+    left: 5%;
+    margin: auto;
+    height: 20px;
+    /* background-color: yellow; */
+    position: absolute;
+    bottom: 10%;
+}
+
+@media (max-width: 720px) {
+	div#contain{
+		left: calc(50% - 161px);
+	}
+
+	html{
+		min-width: 320px;
+	}
+	
+	div#welcome {
+	Position: absolute;
+	left: calc(50% - 159px);
+	top: 22%;
+	color: #6E81FF;
+	font-size: 30px;
+	font-family: Helvetica;
+}
+#weltitle{
+	font-size: 30px;
+}
+
+}
+
+h2#weltitle {}
+
+div#purpose {
+    overflow: hidden;
+    position: absolute;
+    top: 10%;
+    width: 40%;
+    left: 30%;
+}
+
+div#purposeParagraph {
+    Position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
 }
