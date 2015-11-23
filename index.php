@@ -28,15 +28,15 @@
 
 			<div id="purposecontainer" class="pagecontainer">
 				<div class="upscrollbutton"></div>
-				<div id="purpose" class="title"><h1 id="weltitle">What is SimpleTask?</h1></div>
-				<div id="purposeParagraph">purpose purpose prupose asjkhfb sadjf </div>
+				<div id="welcome" class="title"><h1 id="weltitle">What is SimpleTask?</h1></div>
+				<div id="purposeParagraph">purpose purpose prupose asjkhfb sadjf sadjfsd fnsdal kladf kldsaklasdfklsdafkafewfkjaen  njk nk n  kn kan kndk anfklsdanf ksadn dn  njk nkjan kjasn kjadnfksan ksan sn kn kjsdanf kdasnfksdanfk san</div>
 				<div class="downscrollbutton"></div>
 			</div>
 			
 			<!-- use json html iteration here -->
 			<div id="technologycontainer" class="pagecontainer">
+				<div id="technology" class="title"><h1 id="weltitle">Technology    <small>Front End</small></h1></div>
 				<div id="techbubblecontainer">
-					<div id="frontendtechtitle" class="subtitle"></div>
 					<div id="frontendbubbles">
 						<div class="bubbleCont">
 							<div class="bubble">
