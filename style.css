@@ -163,7 +163,7 @@ h2#weltitle {}
 
 div#purpose {
     overflow: hidden;
-    position: absolute;
+    position: relative;
     top: 10%;
     width: 40%;
     left: 30%;
