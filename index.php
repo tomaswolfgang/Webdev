@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+			<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
 			<link rel="stylesheet" type="text/css" href="style.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
 		</head>
 		<body>
 			<div id="welcomecontainer" class="pagecontainer" >
-				<div id="welcome" class="title" class="page-header"><h1>Welcome!<small>This is SimpleTask</small></h1></div>
-				<div id="loginbox">
-					<div id="username"></div>
-					<div id="password"></div>
+				<div id="welcome" class="title" class="page-header"><h1 id="weltitle">Welcome!<small>This is SimpleTask</small></h1></div>
+				<div id="contain" >
+	
+					<form id="login"  action="comp/login_page.php" method="post">
+						<div class="form-group">
+							<label id="ulab" for="user">Enter your username</label>
+							<input id="user" type="text" class="form-control"  name="username">
+							<br>
+							<label id="plab" for="pass">Enter your password</label>
+							<input id="pass" type="password" class="form-control" minlength="6" name="psw">
+							<input id="" type="button" onclick="encryptSubmit()" class="btn btn-default" value="login">
+						</div>
+					</form>
+					<div id="register"><a href="">Don't have an account? Click here to register</a></div>
 				</div>
-				<div id="register"></div>
 				<div class="downscrollbutton"></div>
 			</div>
 
 			<div id="purposecontainer" class="pagecontainer">
 				<div class="upscrollbutton"></div>
-				<div id="purpose" class="title">What is SimpleTask?</div>
+				<div id="purpose" class="title"><h1 id="weltitle">What is SimpleTask?</h1></div>
 				<div id="purposeParagraph">purpose purpose prupose asjkhfb sadjf </div>
 				<div class="downscrollbutton"></div>
 			</div>
