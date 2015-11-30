@@ -53,6 +53,7 @@ Negative: -GitHub merges are tricky. Be careful when you use it
 	  -Test while you build the website, makes it better to debug
 	  -Really secure encryption is difficult to implement
 	  -Web design takes time if you it to look good
+	  -Sharing a database is not that easy
 
 
 
