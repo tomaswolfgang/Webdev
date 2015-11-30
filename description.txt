@@ -40,6 +40,19 @@ Email
 We use the php technology to notify you by email. 
 
 
+Positive: -use frameworks, it makes your programming life way easier
+	  -your login front-end and back-again code will be re-usable forever. Make them work well
+	  -HTML5 is full of small features which helps you checking inputs
+	  -GitHub commits make group work easier
+	  	   
+
+
+
+Negative: -GitHub merges are tricky. Be careful when you use it
+	  -Test while you build the website, makes it better to debug
+	  -Really secure encryption is difficult to implement
+	  -Web design takes time if you it to look good
+
 
 
 
