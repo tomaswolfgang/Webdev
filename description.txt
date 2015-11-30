@@ -44,6 +44,7 @@ Positive: -use frameworks, it makes your programming life way easier
 	  -your login front-end and back-again code will be re-usable forever. Make them work well
 	  -HTML5 is full of small features which helps you checking inputs
 	  -GitHub commits make group work easier
+	  -Use Chrome Editor for CSS web design
 	  	   
 
 
