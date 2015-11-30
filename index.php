@@ -35,17 +35,11 @@
 			
 			<!-- use json html iteration here -->
 			<div id="technologycontainer" class="pagecontainer">
-				<div id="technology" class="title"><h1 id="weltitle">Technology    <small>Front End</small></h1></div>
+				<div id="technology" class="title"><h1 id="weltitle">Technology    <br><small>Front End & Back End</small></h1></div>
 				<div id="techbubblecontainer">
 					<div id="frontendbubbles">
-						<div class="bubbleCont">
-							<div class="bubble">
-								<div class="bubbleoverlay1"></div>
-								<div class="bubbleoverlay2"></div>
-							</div>
-						</div>
 					</div>
-					<div id="backendtechtitle" class="subtitle"></div>
+					<div id="backendtechtitle" class="title"></div>
 					<div id="backendbubbles"></div>
 				</div>
 			</div>
@@ -53,20 +47,33 @@
 
 			<!-- use bootstrap for this list -->
 			<div id="learncontainer" class="pagecontainer">
-				<div id="learntitle" class="title"></div>
-				<div id="learnpositive">
-					<li id="poslist">   
-						<ul></ul>
-						<ul></ul>
-						<ul></ul>
-					</li>
-				</div>
-				<div id="learnnegative">
-					<li id="neglist">
-						<ul></ul>
-						<ul></ul>
-						<ul></ul>
-					</li>
+				<div id="learntitle" class="title"><h1 id="weltitle">Everything we learned. <br> <small>The good and the bad</small></h1></div>
+				<div id="learn">
+					<div id="learnpositive" class="panel panel-default">
+					  <!-- Default panel contents -->
+					  <div class="panel-heading" id="lhead">Positive</div>
+
+					  <!-- List group -->
+						  <ul class="list-group">
+						    <li  class="list-group-item" id="llist">Cras justo odio</li>
+						    <li  class="list-group-item" id="llist">Dapibus ac facilisis in</li>
+						    <li  class="list-group-item" id="llist">Morbi leo risus</li>
+						    <li  class="list-group-item" id="llist">Porta ac consectetur ac</li>
+						</ul>
+					</div>
+					
+					<div id="learnnegative" class="panel panel-default">
+					  <!-- Default panel contents -->
+					  <div class="panel-heading" id="lhead">Negative</div>
+
+					  <!-- List group -->
+					  <ul class="list-group">
+					    <li  class="list-group-item" id="llist">Cras justo odio</li>
+					    <li  class="list-group-item" id="llist">Dapibus ac facilisis in</li>
+					    <li  class="list-group-item" id="llist">Morbi leo risus</li>
+					    <li  class="list-group-item" id="llist">Porta ac consectetur ac</li>
+					  </ul>
+					</div>
 				</div>
 			</div>
 
@@ -80,8 +87,19 @@
 	</html>
 
 	<script type="text/javascript">
+
+	jqloaded = false;
+	ploaded = false;
+
+	function onloadCallback(){
+		console.log("call")
+		if(jqloaded && ploaded){
+			initPage();
+		}
+	}
 	
 
 	</script>
 
-	<script type="text/javascript" src="js/jquery.min.js?v=1.11.3" async onload="jqloaded=true;onloadCallback()">//async loading of scripts</script>
+	<script type="text/javascript" src="js/jquery.min.js?v=1.11.3" async onload="jqloaded=true;onloadCallback()">//  async loading of scripts</script>
+	<script type="text/javascript" src="js/pLoader.js" async onload="ploaded=true;onloadCallback()"></script>
