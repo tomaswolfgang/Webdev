@@ -78,8 +78,18 @@
 			</div>
 
 			<div id="createdcontainer" class="pagecontainer">
-					<div id="createdtitle" class="title"></div>
-					<div id="createdppl"></div>
+					<div id="createdtitle" class="title"><h1 id="weltitle">The Creators <br><small>Who we are</small></h1></div>
+					<div id="createdppl">
+						<!-- <div class="profilecont">
+							<div class="profpic"></div>
+							<div class="profinfo">
+								<div class="profname"></div>
+								<div class="proflink">
+									<div class="social"><a href="javascript:void(0);" class="icon-linkedin"></a></div>
+								</div>
+							</div>
+						</div> -->
+					</div>
 				</div>	
 
 			
