@@ -3,6 +3,30 @@ var fbubbleData = [{title: "",description: "We used some new features of HTML5 s
 
 var createdData = [{name:"Thomas Wong",picture:"test.png",linkedin:"https://www.linkedin.com/profile/view?id=AAIAABK5zlcBxRhFIMoTUu8hOR8ZOHG64_iLz9Q&trk=nav_responsive_tab_profile_pic"},{name:"Marie Lagarde",picture:"test.png",linkedin:"https://www.linkedin.com/profile/view?id=AAIAABK5zlcBxRhFIMoTUu8hOR8ZOHG64_iLz9Q&trk=nav_responsive_tab_profile_pic"},{name:"Michelle Yang",picture:"test.png",linkedin:"https://www.linkedin.com/profile/view?id=AAIAABK5zlcBxRhFIMoTUu8hOR8ZOHG64_iLz9Q&trk=nav_responsive_tab_profile_pic"}]
 
+function eSubmit(){
+			var u = document.getElementById("user").value;
+			var p = document.getElementById("pass").value;	
+
+		var pEncrypt = encrypt(p);
+		var memberData = {username: u,password:pEncrypt};
+		var param = JSON.stringify(memberData);
+		
+		var xhttp = new XMLHttpRequest();
+	  		xhttp.onreadystatechange = function() {
+	    	if (xhttp.readyState == 4 && xhttp.status == 200) {
+	      	res.innerHTML = xhttp.responseText;
+	    		}
+		  }
+		  xhttp.open("POST", "loginServerSide.php", true);
+		  
+		  xhttp.send(param);
+		  $("#pageContainer").animate({"margin-left":"-100%"},300);
+} 
+
+function r(){
+	$("#pageContainer").animate({"margin-left":"0"},300);
+}
+
 function initPage(){
 	initBubbleData($("#frontendbubbles"), fbubbleData);
 	
