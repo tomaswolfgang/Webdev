@@ -28,24 +28,18 @@
 
 			<div id="purposecontainer" class="pagecontainer">
 				<div class="upscrollbutton"></div>
-				<div id="purpose" class="title"><h1 id="weltitle">What is SimpleTask?</h1></div>
-				<div id="purposeParagraph">purpose purpose prupose asjkhfb sadjf </div>
+				<div id="welcome" class="title"><h1 id="weltitle">What is SimpleTask?</h1></div>
+				<div id="purposeParagraph">purpose purpose prupose asjkhfb sadjf sadjfsd fnsdal kladf kldsaklasdfklsdafkafewfkjaen  njk nk n  kn kan kndk anfklsdanf ksadn dn  njk nkjan kjasn kjadnfksan ksan sn kn kjsdanf kdasnfksdanfk san</div>
 				<div class="downscrollbutton"></div>
 			</div>
 			
 			<!-- use json html iteration here -->
 			<div id="technologycontainer" class="pagecontainer">
+				<div id="technology" class="title"><h1 id="weltitle">Technology    <br><small>Front End & Back End</small></h1></div>
 				<div id="techbubblecontainer">
-					<div id="frontendtechtitle" class="subtitle"></div>
 					<div id="frontendbubbles">
-						<div class="bubbleCont">
-							<div class="bubble">
-								<div class="bubbleoverlay1"></div>
-								<div class="bubbleoverlay2"></div>
-							</div>
-						</div>
 					</div>
-					<div id="backendtechtitle" class="subtitle"></div>
+					<div id="backendtechtitle" class="title"></div>
 					<div id="backendbubbles"></div>
 				</div>
 			</div>
@@ -53,26 +47,49 @@
 
 			<!-- use bootstrap for this list -->
 			<div id="learncontainer" class="pagecontainer">
-				<div id="learntitle" class="title"></div>
-				<div id="learnpositive">
-					<li id="poslist">   
-						<ul></ul>
-						<ul></ul>
-						<ul></ul>
-					</li>
-				</div>
-				<div id="learnnegative">
-					<li id="neglist">
-						<ul></ul>
-						<ul></ul>
-						<ul></ul>
-					</li>
+				<div id="learntitle" class="title"><h1 id="weltitle">Everything we learned. <br> <small>The good and the bad</small></h1></div>
+				<div id="learn">
+					<div id="learnpositive" class="panel panel-default">
+					  <!-- Default panel contents -->
+					  <div class="panel-heading" id="lhead">Positive</div>
+
+					  <!-- List group -->
+						  <ul class="list-group">
+						    <li  class="list-group-item" id="llist">Cras justo odio</li>
+						    <li  class="list-group-item" id="llist">Dapibus ac facilisis in</li>
+						    <li  class="list-group-item" id="llist">Morbi leo risus</li>
+						    <li  class="list-group-item" id="llist">Porta ac consectetur ac</li>
+						</ul>
+					</div>
+					
+					<div id="learnnegative" class="panel panel-default">
+					  <!-- Default panel contents -->
+					  <div class="panel-heading" id="lhead">Negative</div>
+
+					  <!-- List group -->
+					  <ul class="list-group">
+					    <li  class="list-group-item" id="llist">Cras justo odio</li>
+					    <li  class="list-group-item" id="llist">Dapibus ac facilisis in</li>
+					    <li  class="list-group-item" id="llist">Morbi leo risus</li>
+					    <li  class="list-group-item" id="llist">Porta ac consectetur ac</li>
+					  </ul>
+					</div>
 				</div>
 			</div>
 
 			<div id="createdcontainer" class="pagecontainer">
-					<div id="createdtitle" class="title"></div>
-					<div id="createdppl"></div>
+					<div id="createdtitle" class="title"><h1 id="weltitle">The Creators <br><small>Who we are</small></h1></div>
+					<div id="createdppl">
+						<!-- <div class="profilecont">
+							<div class="profpic"></div>
+							<div class="profinfo">
+								<div class="profname"></div>
+								<div class="proflink">
+									<div class="social"><a href="javascript:void(0);" class="icon-linkedin"></a></div>
+								</div>
+							</div>
+						</div> -->
+					</div>
 				</div>	
 
 			
@@ -80,8 +97,19 @@
 	</html>
 
 	<script type="text/javascript">
+
+	jqloaded = false;
+	ploaded = false;
+
+	function onloadCallback(){
+		console.log("call")
+		if(jqloaded && ploaded){
+			initPage();
+		}
+	}
 	
 
 	</script>
 
-	<script type="text/javascript" src="js/jquery.min.js?v=1.11.3" async onload="jqloaded=true;onloadCallback()">//async loading of scripts</script>
+	<script type="text/javascript" src="js/jquery.min.js?v=1.11.3" async onload="jqloaded=true;onloadCallback()">//  async loading of scripts</script>
+	<script type="text/javascript" src="js/pLoader.js" async onload="ploaded=true;onloadCallback()"></script>
