@@ -15,6 +15,8 @@
 	/* max-width:100%; */
 }
 
+
+
 #welcomecontainer{
 	background-color: #C6DCFF;
 	box-shadow: 0px 1px 2px rgba(0,0,0,.4);
@@ -42,14 +44,14 @@ input#user {
 
 div#contain {
     width: 600px;
-    height: 270px;
+    height: 320px;
     min-width: 320px;
     /* margin: auto; */
     /* margin-top: 0px; */
-    padding-bottom: 323px;
+    padding-bottom: 340px;
     left: calc(50% - 300px);
     background-color: aliceblue;
-    top: 30%;
+    top: 15%;
     position: absolute;
     box-shadow: 0px 1px 4px rgba(0,0,0,.4);
     border-radius: 20px;
@@ -104,8 +106,9 @@ body{
     height: 100%;
     margin: 0;
     padding: 0;
-    width: 50%;
+    width: 50.5%;
     display: inline-block;
+    opacity: 0;
 }
 
 .bubble{
@@ -148,7 +151,7 @@ body{
 
 
 div#welcome {
-position: absolute;left: calc(50% - 300px);top: 20%;color: #6E81FF;font-size: 40px;font-family: Helvetica;}
+position: absolute;left: calc(50% - 300px);top: 5%;color: #6E81FF;font-size: 40px;font-family: Helvetica;}
 
 #weltitle{
 	font-size: 50px;
@@ -189,6 +192,8 @@ div#loginbox {
 
 form#login {
     font-family: helvetica, sans-serif;
+    /* display: none; */
+    margin-top: 0;
 }
 
 div#register {
@@ -517,9 +522,10 @@ div#createdppl {
 
 div#page2 {
     width: 50%;
-    /* background-color: red; */
+    background-color: rgba(250, 232, 178, 0.41);
     /* z-index: 10; */
     position: absolute;
+    overflow-y: scroll;
     height: 100%;
     top: 0px;
     display: inline-block;
@@ -534,4 +540,171 @@ div#pageContainer {
 
 div#result {
     padding-left: 10px;
+    padding-bottom: 30px;
+    background-color: rgb(209, 153, 153);
+    min-height: 250px;
+}
+
+.mdl-textfield.mdl-js-textfield.is-upgraded {
+    width: 600px;
+}
+
+div#p1cont {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+div#p2cont {
+/* height: 100%; */overflow-y: scroll;}
+
+div#success {
+    font-size: 30px;
+    width: 500px;
+    height: 150px;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+table.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable.mdl-shadow--2dp {
+    margin-left: 20%;
+    height: 500px;
+    font-size: 21px;
+    border-radius: 10px;
+}
+
+div#addtask {
+    margin-left: 20%;
+    /* color: black; */
+    margin-top: -25%;
+    display: none;
+    opacity: 0;
+}
+
+button.mdl-button.mdl-js-button.mdl-button--raised {
+    margin-left: 80px;
+}
+
+button#addbutton {
+    margin-left: 10px;
+}
+
+#loadingCircle
+{
+  height: 200px;
+  width:  200px;
+  background-color: white;
+  position:absolute;
+  top:50%;
+  left: 25%;
+  margin-top:-100px;
+  margin-left:-100px;
+}
+
+div#logout {
+    position: absolute;
+    right: 20%;
+    top: 120px;
+    color: #0032FF;
+}
+
+html.mdl-js {
+    overflow-x: hidden;
+}
+
+#addexp {
+    position: absolute;
+    top: 190px;
+    left: 21%;
+}
+
+input#username {
+    /* color: black; */
+}
+
+label.mdl-textfield__label {
+    color: rgba(0, 70, 135, 0.46);
+}
+
+form#register {
+    display: none;
+    width: 100%;
+    top: 54px;
+    left: 300px;
+    position: absolute;
+}
+
+input#mail {
+    width: 80%;
+    margin-left: 10%;
+}
+
+input#pass2 {
+    width: 80%;
+    margin-left: 10%;
+}
+
+label#mail {
+    margin-left: 5%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+label#plab2 {
+    margin-left: 5%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+a#lgout {
+    color: #5F1010;
+    font-size: 20px;
+}
+
+input#user2 {
+    width: 80%;
+    margin-left: 10%;
+}
+
+input#pswconf {
+    width: 80%;
+    margin-left: 10%;
+}
+
+div#response {
+    width: 500px;
+    margin: auto;
+    height: 300px;
+    /* margin-top: 90px; */
+    position: absolute;
+    /* background-color: red; */
+    top: 500px;
+    left: calc(50% - 250px);
+}
+
+label#maillab {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+div#regsuccess {
+    font-size: 30px;
+    width: 500px;
+    height: 150px;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 35px;
+}
+
+input#c1 {
+    margin-left: 18%;
+    margin-top: 4PX;
+}
+
+div#remcheck {
+    padding-left: 10px;
+    font-size: 15px;
 }

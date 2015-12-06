@@ -81,7 +81,7 @@ function decrypt($str,$sk,$acc){
 function logsuccess($u){
 
 
-	echo "<div id='success'> $u's Tasks </div>";
+	echo "<div id='success'><h1 id='weltitle'> $u's <small>Tasks</small> </h1></div>";
 	printByUsername($u);
 	
 

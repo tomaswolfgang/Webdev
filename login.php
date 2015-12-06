@@ -67,7 +67,7 @@ function logsuccess($user, $mail, $dpword){
 	$q = "INSERT INTO users (valid, username, email, password, hash) VALUES (0, '$user', '$mail', '$dpword', '$hash')";
 	$conn->query($q);
 
-	echo "<div id='success'> Congratulations $user! You have created an account </div>";
+	echo "<div id='regsuccess'> Congratulations $user! You have created an account </div>";
 	
 	
 	$to      = $mail; 
@@ -92,7 +92,7 @@ function logsuccess($user, $mail, $dpword){
 }
 
 function logfail(){
-	echo "<div id='fail'>Choose an other username</div>";
+	echo "<div id='regsuccess'>You're username has already been taken, please try again!</div>";
 	
 }
 
