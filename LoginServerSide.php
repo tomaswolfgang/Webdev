@@ -1,7 +1,7 @@
 
 <?php
 require 'vendor/autoload.php';
-include_once 'printTasks.php';
+include_once 'functions.php';
 
 $app = new \Slim\Slim();
 
@@ -81,7 +81,8 @@ function decrypt($str,$sk,$acc){
 function logsuccess($u){
 
 
-	echo "<div id='success'><h1 id='weltitle'> $u's <small>Tasks</small> </h1></div>";
+	echo "<div id='success'><h1 id='weltitle'> $u's tasks | <small>Click to a select task(s)</small> </h1></div>";
+	
 	printByUsername($u);
 	
 

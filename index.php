@@ -2,11 +2,11 @@
 	<html>
 		<head>
 			<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" type="text/css" href="style.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 			<script src='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js'></script>
 			<link rel='stylesheet' href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css'>
 			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+			<link rel="stylesheet" type="text/css" href="style.css">
 		</head>
 		<body>
 			<div id="pageContainer">
@@ -14,6 +14,7 @@
 				<div id="p1cont">
 					<canvas id="loadingCircle" height="200px" width="200px"></canvas>
 					<div id="page1">
+
 						<div id="welcomecontainer" class="pagecontainer" >
 							<div id="welcome" class="title" class="page-header"><h1 id="weltitle">Welcome!<small>This is SimpleTask</small></h1></div>
 							<div id="contain" >
@@ -69,12 +70,11 @@
 						
 						<!-- use json html iteration here -->
 						<div id="technologycontainer" class="pagecontainer">
-							<div id="technology" class="title"><h1 id="weltitle">Technology    <br><small>Front End & Back End</small></h1></div>
+							<div id="technology" class="title"><h1 id="weltitle">Technology    <br><small>Front End</small></h1></div>
 							<div id="techbubblecontainer">
 								<div id="frontendbubbles">
 								</div>
-								<div id="backendtechtitle" class="title"></div>
-								<div id="backendbubbles"></div>
+								
 							</div>
 						</div>
 						
@@ -89,10 +89,11 @@
 
 								  <!-- List group -->
 									  <ul class="list-group">
-									    <li  class="list-group-item" id="llist">Cras justo odio</li>
-									    <li  class="list-group-item" id="llist">Dapibus ac facilisis in</li>
-									    <li  class="list-group-item" id="llist">Morbi leo risus</li>
-									    <li  class="list-group-item" id="llist">Porta ac consectetur ac</li>
+									    <li  class="list-group-item" id="llist">-use frameworks, it makes your programming life way easier</li>
+									    <li  class="list-group-item" id="llist">-your login front-end and back-again code will be re-usable forever. Make them work well</li>
+									    <li  class="list-group-item" id="llist">-HTML5 is full of small features which helps you checking inputs</li>
+									    <li  class="list-group-item" id="llist">-GitHub commits make group work easier</li>
+									    <li  class="list-group-item" id="llist">-Use Chrome Editor for CSS web design</li>
 									</ul>
 								</div>
 								
@@ -102,10 +103,11 @@
 
 								  <!-- List group -->
 								  <ul class="list-group">
-								    <li  class="list-group-item" id="llist">Cras justo odio</li>
-								    <li  class="list-group-item" id="llist">Dapibus ac facilisis in</li>
-								    <li  class="list-group-item" id="llist">Morbi leo risus</li>
-								    <li  class="list-group-item" id="llist">Porta ac consectetur ac</li>
+								    <li  class="list-group-item" id="llist">-GitHub merges are tricky. Be careful when you use it </li>
+								    <li  class="list-group-item" id="llist">-Test while you build the website, makes it better to debug</li>
+								    <li  class="list-group-item" id="llist">-Really secure encryption is difficult to implement</li>
+								    <li  class="list-group-item" id="llist">-Web design takes time if you it to look good</li>
+								    <li  class="list-group-item" id="llist">-Sharing a database is not that easy</li>
 								  </ul>
 								</div>
 							</div>
@@ -131,43 +133,46 @@
 				<div id="p2cont">
 					<div id="page2">
 						<div id="logout"><a id="lgout" href="javascript:;" onclick="r()">Log Out</a></div>
+						<div id="finishedCount">You've finished <h id="fcount">9</h> tasks!</div>
 						<div id="result"></div>
 						<button id="addexp" type="button" class="btn btn-default" onclick="clickadd()" aria-label="plus">
  							 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
-						<div id="addtask"><form>
-						    <div class="mdl-textfield mdl-js-textfield">
+						<button id="deletebutton" type="button" class="btn btn-default" onclick="deleteRows()" aria-label="plus">
+ 							 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+						<button id="finishbutton" type="button" class="btn btn-default" onclick="finishRows()" aria-label="plus">
+ 							 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
+						<div id="addtask">
+							<div id="addtaskinner">
+							<form id="addform">
+						    <div class="mdl-textfield mdl-js-textfield" id="out_tn">
 						        <input class="mdl-textfield__input" type="text" id="task_name">
-						        <label class="mdl-textfield__label" for="task_name">Task Name</label>	
+						        <label class="mdl-textfield__label" for="task_name">Task Name (required)</label>	
 							</div><br>
-						        <div class="mdl-textfield mdl-js-textfield">
+						        <div class="mdl-textfield mdl-js-textfield" id="out_ds">
 						        <textarea class="mdl-textfield__input" type="text" rows= "3" id="description" ></textarea>
 						        <label class="mdl-textfield__label" for="description">Description</label> 
 							</div><br>
-							<div class="mdl-textfield mdl-js-textfield">
+							<div class="mdl-textfield mdl-js-textfield" id="out_fd">
 						        <input class="mdl-textfield__input" type="text" pattern="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" id="finish_date">
-						        <label class="mdl-textfield__label" for="finish_date">Finish Date YYYY-MM-DD</label>
+						        <label class="mdl-textfield__label" for="finish_date">Finish Date YYYY-MM-DD (required)</label>
 						        <span class="mdl-textfield__error">Input is not a date!</span>
 					 		</div>  <br>
-					 		<div class="mdl-textfield mdl-js-textfield">
+					 		<div class="mdl-textfield mdl-js-textfield" id="out_ct">
 						     	<input class="mdl-textfield__input" type="text" id="category">
-						        <label class="mdl-textfield__label" for="category">Category</label>
-					 		</div><br>
-					 		<div class="mdl-textfield mdl-js-textfield">
-						        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="priority">
-						        <label class="mdl-textfield__label" for="priority">Priority</label>
-						        <span class="mdl-textfield__error">Input is not a number!</span> 
-						    </div>
+						        <label class="mdl-textfield__label" for="category">Category (required)</label>
+					 		</div>
 						    
 					    </form>
 					    <button id="addbutton" onclick="addend()" name="add" class="mdl-button mdl-js-button mdl-button--raised" value="Add Task">
 					      	Add Task
-					    	</button> <br></div>
+					    	</button> <br></div></div>
+					    <div id="addoverlay" onclick="addexit()"></div>
 				     
 				    
-				    <button type="submit" name="delete" class="mdl-button mdl-js-button mdl-button--raised" >
-				      Delete Task(s)
-				    </button>
+				    
 
 				</div>
 			</div>
@@ -178,7 +183,6 @@
 
 	<script type="text/javascript">
 
-	var jqloaded = false;
 	var ploaded = false;
 	var cookloaded= false;
 
@@ -188,7 +192,7 @@
 
 	function onloadCallback(){
 		console.log("call")
-		if(jqloaded && ploaded && cookloaded){
+		if(ploaded && cookloaded){
 			initPage();
 		}
 	}
@@ -200,6 +204,6 @@
 
 	</script>
 	<script type="text/javascript" src="js/encryption.js"></script>
-	<script type="text/javascript" src="js/jquery.min.js?v=1.11.3" async onload="jqloaded=true;onloadCallback()">//  async loading of scripts</script>
+	<script type="text/javascript" src="js/jquery.min.js?v=1.11.3" >//  async loading of scripts</script>
 	<script type="text/javascript" src="js/pLoader.js" async onload="ploaded=true;onloadCallback()"></script>
 	<script type="text/javascript" src="js/jquery.cookie.js" async onload="cookloaded=true;onloadCallback()"></script>

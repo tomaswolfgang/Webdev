@@ -148,6 +148,9 @@ body{
     position: absolute;
 }
 
+.is-deleted{
+    
+}
 
 
 div#welcome {
@@ -159,7 +162,7 @@ position: absolute;left: calc(50% - 300px);top: 5%;color: #6E81FF;font-size: 40p
 }
 
 #technology{
-	position: absolute;
+	/* position: absolute; */
 	left: 25%;
 	top: 0;
 	width: 75%;
@@ -229,7 +232,7 @@ div#techbubblecontainer {
     height: auto;
     display: inline-block;
     border-radius: 50px;
-    margin-top: 150px;
+    margin-top: -90px;
     background-color: white;
 }
 
@@ -239,8 +242,8 @@ div#frontendbubbles {
     overflow: hidden;
     height: auto;
     /* background-color: red; */
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 20px;
 }
 
 .bubbleCont {
@@ -364,7 +367,7 @@ div#welcome{
 	div#welcome {
 	Position: absolute;
 	left: calc(50% - 159px);
-	top: 15%;
+	top: 7%;
 	color: #6E81FF;
 	font-size: 30px;
 	font-family: Helvetica;
@@ -506,6 +509,7 @@ div#createdppl {
     /* background-color: white; */
     height: 100%;
     vertical-align: top;
+    line-height: 1.5;
     margin-left: calc(50% - 100px);
     font-size: 35px;
     text-align: center;
@@ -556,28 +560,36 @@ div#p1cont {
 }
 
 div#p2cont {
-/* height: 100%; */overflow-y: scroll;}
+overflow-y: scroll;}
 
 div#success {
     font-size: 30px;
-    width: 500px;
+    width: 600px;
     height: 150px;
     line-height: 1.5;
-    text-align: center;
     margin-top: 100px;
-    margin-left: 10%;
+    margin-left: calc(50% - 400px);
 }
 
 table.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable.mdl-shadow--2dp {
-    margin-left: 20%;
-    height: 500px;
-    font-size: 21px;
+    margin-left: calc(50% - 400px);
+    height: 600px;
+    /* width: 100px; */
+    font-size: 20px;
     border-radius: 10px;
 }
 
 div#addtask {
-    margin-left: 20%;
+    margin-left: calc(50% - 350px);
     /* color: black; */
+    width: 700px;
+    height: 450px;
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+    top: 140px;
+    text-align: center;
+    border-radius: 10px;
     margin-top: -25%;
     display: none;
     opacity: 0;
@@ -589,6 +601,7 @@ button.mdl-button.mdl-js-button.mdl-button--raised {
 
 button#addbutton {
     margin-left: 10px;
+    background-color: rgba(252, 242, 212, 0.69);
 }
 
 #loadingCircle
@@ -605,7 +618,7 @@ button#addbutton {
 
 div#logout {
     position: absolute;
-    right: 20%;
+    left: calc(50% + 340px);
     top: 120px;
     color: #0032FF;
 }
@@ -617,7 +630,7 @@ html.mdl-js {
 #addexp {
     position: absolute;
     top: 190px;
-    left: 21%;
+    left: calc(50% - 400px);
 }
 
 input#username {
@@ -707,4 +720,118 @@ input#c1 {
 div#remcheck {
     padding-left: 10px;
     font-size: 15px;
+}
+
+div#technologybackendbubbles {
+    padding-top: 50px;
+    margin-left: 25%;
+    width: 72%;
+    display: block;
+    color: #6E81FF;
+    font-size: 40px;
+    font-family: Helvetica;
+}
+
+div#technologyfrontendbubbles {
+    /* position: absolute; */
+    margin-left: 25%;
+    padding-top: 50px;
+    width: 75%;
+    display: block;
+    color: #6E81FF;
+    font-size: 40px;
+    font-family: Helvetica;
+}
+
+div#technologyspecialtechbubbles {
+    padding-top: 50px;
+    margin-left: 25%;
+    top: 0;
+    width: 75%;
+    display: block;
+    color: #6E81FF;
+    font-size: 40px;
+    font-family: Helvetica;
+}
+
+div#backendbubbles {
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+    height: auto;
+    /* background-color: red; */
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+div#specialtechbubbles {
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+    height: auto;
+    /* background-color: red; */
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+div#addoverlay {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    display: none;
+    opacity: 0;
+    height: 100%;
+    /* overflow: hidden; */
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+}
+
+div#addtaskinner {
+    margin-top: 30px;
+}
+
+table#tasktable {
+    width: 600px;
+    border: none;
+    white-space: normal;
+    /* padding-left: 40px; */
+}
+
+td.mdl-data-table__cell--non-numeric {
+    width: 210px;
+}
+
+th.mdl-data-table__cell--non-numeric {}
+
+div#tester {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
+button#deletebutton {
+    position: absolute;
+    top: 190px;
+    left: calc(50% - 327px);
+}
+
+small {
+}
+
+div#finishedCount {
+    position: absolute;
+    top: 190px;
+    left: calc(50% + 160px);
+    font-size: 20px;
+}
+
+h#fcount {
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+button#finishbutton {
+    position: absolute;
+    top: 190px;
+    left: calc(50% - 252px);
 }

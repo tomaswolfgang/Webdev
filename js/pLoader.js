@@ -1,17 +1,32 @@
 
-var fbubbleData = [{title: "",description: "We used some new features of HTML5 such as email input. Email input is know checked by the browser to ensure a valid email address has been entered.", image:"img/html.png"},{title: "",description: "Bootstrap makes your programmer life easier. We used some buttons pattern to make the visual better. ", image:"img/bootstrap.png"},{title: "",description: "JQTHIS AND THAT BLAH BLAH", image:"img/jquery.png"},{title: "",description: "Client’s security is one of our priority. We use password encryption to ensure your password is unclear when it transits to our server.", image:"img/security.png"},{title: "",description: "We used the Jquery cookie technology to remember the username if the user checks the « remember me » box.", image:"img/cookie.png"},{title: "XAMPP",description: "Xampp is a free and open source cross-platform web server solution package. It includes Apache HTTP server, MySQL Database and various interpreters for scripts written in PHP.", image:""},{title: "",description: "We use MySQL to manage your datas. It is an open-source relational database management system.", image:"img/mysql.png"},{title: "",description: "We used PHP embedded into HTML code for our back end management. We also used the mail feature to communicate with the client’s mailbox", image:"img/php.png"},{title: "Email",description: "We use the php technology to notify you by email.", image:""},{title: "",description: "We use the php technology to notify you by email.", image:""}];
+var fbubbleData = [{title: "",description: "We used some new features of HTML5 such as the canvas tag. This allowed us to easily implement a loader animation without having to import a gif", image:"img/html.png"},{title: "",description: "Bootstrap makes your programmer life easier. We used some buttons pattern to make the visual better. ", image:"img/bootstrap.png"},{title: "",description: "As a cross-browser library, by using jquery, we minimize the work needed for the page to be cross-browser compaitble.", image:"img/jquery.png"},{title: "",description: "We used the Jquery cookie technology to remember the username if the user checks the « remember me » box.", image:"img/cookie.png"}];
+var bbubbleData = [{title: "",description: "Client’s security is one of our priority. We use password encryption to ensure your password is unclear when it transits to our server.", image:"img/security.png"},{title: "XAMPP",description: "Xampp is a free and open source cross-platform web server solution package. It includes Apache HTTP server, MySQL Database and various interpreters for scripts written in PHP.", image:""},{title: "",description: "We use MySQL to manage your datas. It is an open-source relational database management system.", image:"img/mysql.png"},{title: "",description: "We used PHP embedded into HTML code for our back end management. We also used the mail feature to communicate with the client’s mailbox", image:"img/php.png"},{title: "Email",description: "We use the php technology to notify you by email.", image:""}];
+var specbubbleData = [];
 
 var createdData = [{name:"Thomas Wong",picture:"test.png",linkedin:"https://www.linkedin.com/profile/view?id=AAIAABK5zlcBxRhFIMoTUu8hOR8ZOHG64_iLz9Q&trk=nav_responsive_tab_profile_pic"},{name:"Marie Lagarde",picture:"test.png",linkedin:"https://www.linkedin.com/profile/view?id=AAMAABrwe0ABMAGedWtFhtn4ncE25qWTBGfnBV0&trk=hp-identity-name"},{name:"Michelle Yang",picture:"test.png",linkedin:"https://www.linkedin.com/profile/view?id=AAIAABpdaDsBvZBLGKhN-K80T-cjfcuKiE3BZfc&trk=nav_responsive_tab_profile"}]
+var global_user = "";
 
 function eSubmit(){
 		
 		var u = document.getElementById("user").value;
 		var p = document.getElementById("pass").value;	
+		global_user = u;
 
 		if($('#c1').is(':checked')) {
                 var username=u; 
                 $.cookie("username", username, { expires: 365 }); 
      	}
+     	var memberData1 = {username: u};
+		var param1 = JSON.stringify(memberData1);
+     	var count = document.getElementById("fcount");
+     	var xhttp1 = new XMLHttpRequest();
+	  		xhttp1.onreadystatechange = function() {
+	    	if (xhttp1.readyState == 4 && xhttp1.status == 200) {
+	      		count.innerHTML = xhttp1.responseText;
+	    		}
+		  }
+		  xhttp1.open("POST", "finishcount.php", true);
+		  xhttp1.send(param1);
 
 		var pEncrypt = encrypt(p);
 		var memberData = {username: u,password:pEncrypt};
@@ -21,12 +36,25 @@ function eSubmit(){
 	  		xhttp.onreadystatechange = function() {
 	    	if (xhttp.readyState == 4 && xhttp.status == 200) {
 	      	res.innerHTML = xhttp.responseText;
+	     	
+			   if($("#fail").length == 0){
+			   	$("#pageContainer").animate({"margin-left":"-100%"},300);
+			     $("#response").html("");
+			     $("#tasktable").css("height",($("tr").length - 1)*100+20 + "px");
+			     $("#tasktable").css("width","800px");
+			   }
+			   else{
+			   		console.log("stayin!");
+			   		$("#response").html("<div id='regsuccess'>It seems that there is an error with the information you've entered. Please try again!</div>")
+			   }
+			
 	    		}
 		  }
 		  xhttp.open("POST", "loginServerSide.php", true);
 		  
 		  xhttp.send(param);
-		  $("#pageContainer").animate({"margin-left":"-100%"},300);
+
+		 
 } 
 
 function loader(){
@@ -126,17 +154,186 @@ function clickadd(){
 
 	$("#addtask").css("display", "block");
 	$("#addtask").animate({"margin-top":"0"},{duration:300, queue:false});
+	$("#addoverlay").css("display", "block");
+	$("#addoverlay").animate({"opacity":"1"},{duration:300, queue:false});
 	$("#addtask").delay(100).animate({"opacity":"1"},{duration:300, queue:false});
+	$("#task_name").val("");
+  	$("#description").val("");
+  	$("#finish_date").val("");
+  	$("#category").val("");
+  	$("#out_tn").removeClass("is-dirty");
+  	$("#out_ds").removeClass("is-dirty");
+  	$("#out_fd").removeClass("is-dirty");
+  	$("#out_ct").removeClass("is-dirty");
 }
-function addend(){
-	
+function addexit(){
 	$("#addtask").animate({"margin-top":"-25%"},{duration:350, queue:false, complete: function() {
     // Animation complete.
+	
+    $("#addoverlay").css("display", "none");
+
 
     $("#addtask").css("display", "none");
   	}});
+  	$("#addoverlay").animate({"opacity":"0"},{duration:300, queue:false});
 	$("#addtask").animate({"opacity":"0"},{duration:200, queue:false});
+}
+function addend(){
 	
+	var tn = document.getElementById("task_name").value;
+	var ds = document.getElementById("description").value;
+	var fd = document.getElementById("finish_date").value;
+	var ct = document.getElementById("category").value;
+
+	if(tn != "" && fd != "" && ct != ""){
+	addexit();
+	console.log ("tn: "+ tn +"    ds: "+ds+"    fd:"+fd+"    ct:"+ct);
+	var data = {username:global_user,task_name: tn,description:ds,finish_date:fd,category:ct};
+	var param = JSON.stringify(data);
+	var data2 = {username:global_user};
+	var param2 = JSON.stringify(data2);
+
+
+	var xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+    	if (xhttp.readyState == 4 && xhttp.status == 200) {
+    	
+
+      	var xhttp2 = new XMLHttpRequest();
+	  		xhttp2.onreadystatechange = function() {
+	    	if (xhttp2.readyState == 4 && xhttp2.status == 200) {
+	    		var input ="<div id='success'><h1 id='weltitle'>"+global_user+"'s tasks | <small>Click to a select task(s)</small> </h1></div>"+xhttp2.responseText
+	    		res.innerHTML = input;
+			   	console.log
+				$("#tasktable").css("width","800px");
+			     $("#tasktable").css("height",($("tr").length - 1)*100+20 + "px");
+			  	
+			
+	    		}
+		  }
+		  xhttp2.open("POST", "printTasks.php", true);
+		  
+		  xhttp2.send(param2);
+
+    		}
+	  }
+	  xhttp.open("POST", "addtask.php", true);
+	  
+	  xhttp.send(param);
+	}
+	else{
+		alert("Please make sure you've filled in all of the required areas");
+	}
+
+
+	  
+	}
+
+function deleteRows(){
+	var data2 = {username:global_user};
+	var param2 = JSON.stringify(data2);
+	var limit = $("tr").length - 1;
+	var num = 0;
+	for(var i = 0; i<limit;i++){
+		var row = "#tableValues"+i;
+
+		if($(row).hasClass("is-selected")){
+			num++;
+			$(row).css("display","none");
+			$("#tasktable").css("height",(limit - num)*100+20 + "px")
+			var tn = $($(row).children()[0]).html();
+			var ds = $($(row).children()[1]).html();
+			var fd = $($(row).children()[2]).html();
+			var ct = $($(row).children()[3]).html();
+			var data = {username:global_user,task_name: tn,description:ds,finish_date:fd,category:ct};
+			var param = JSON.stringify(data);
+			
+			var xhttp = new XMLHttpRequest();
+		  		xhttp.onreadystatechange = function() {
+			    	if (xhttp.readyState == 4 && xhttp.status == 200) {
+			     		var xhttp2 = new XMLHttpRequest();
+				  		xhttp2.onreadystatechange = function() {
+				    	if (xhttp2.readyState == 4 && xhttp2.status == 200) {
+				    		var input ="<div id='success'><h1 id='weltitle'>"+global_user+"'s tasks | <small>Click to a select task(s)</small> </h1></div>"+xhttp2.responseText
+				    		res.innerHTML = input;
+						   	console.log("did you delete????");
+							$("#tasktable").css("width","800px");
+						     $("#tasktable").css("height",($("tr").length - 1)*100+20 + "px");
+			  	
+			
+	    		}
+		  }
+		  xhttp2.open("POST", "printTasks.php", true);
+		  
+		  xhttp2.send(param2);
+			    	}
+			 	}
+			  xhttp.open("POST", "deletetask.php", true);
+			  
+			  xhttp.send(param);
+
+
+
+		}
+	}
+	
+}
+
+function finishRows(){
+	var data2 = {username:global_user};
+	var param2 = JSON.stringify(data2);
+	var limit = $("tr").length - 1;
+	var num = 0;
+	for(var i = 0; i<limit;i++){
+		var row = "#tableValues"+i;
+
+		if($(row).hasClass("is-selected")){
+			num++;
+			$(row).css("display","none");
+			$("#tasktable").css("height",(limit - num)*100+20 + "px")
+			var tn = $($(row).children()[0]).html();
+			var ds = $($(row).children()[1]).html();
+			var fd = $($(row).children()[2]).html();
+			var ct = $($(row).children()[3]).html();
+			var data = {username:global_user,vars:{username:global_user,task_name: tn,description:ds,finish_date:fd,category:ct}};
+			var param = JSON.stringify(data);
+			
+			var xhttp = new XMLHttpRequest();
+		  		xhttp.onreadystatechange = function() {
+			    	if (xhttp.readyState == 4 && xhttp.status == 200) {
+			    		console.log($("#fcount").html());
+			    		$("#fcount").html(xhttp.responseText)
+			    		var xhttp2 = new XMLHttpRequest();
+				  		xhttp2.onreadystatechange = function() {
+				    	if (xhttp2.readyState == 4 && xhttp2.status == 200) {
+				    		var input ="<div id='success'><h1 id='weltitle'>"+global_user+"'s tasks | <small>Click to a select task(s)</small> </h1></div>"+xhttp2.responseText
+				    		res.innerHTML = input;
+						   console.log("ajsnfdajsdnsaljn");
+							$("#tasktable").css("width","800px");
+						     $("#tasktable").css("height",($("tr").length - 1)*100+20 + "px");
+			  	
+			
+	    		}
+		  }
+		  xhttp2.open("POST", "printTasks.php", true);
+		  
+		  xhttp2.send(param2);
+			    	}
+			 	}
+			  xhttp.open("POST", "finishtask.php", true);
+			  
+			  xhttp.send(param);
+
+
+
+		}
+	}
+	
+}
+	
+function selectRow(n){
+	var id = "#tableValues"+ n;
+	$(id).toggleClass("is-selected");
 }
 function signup(){
 	console.log("reg");
@@ -165,7 +362,7 @@ function signupexit(){
 }
 
 function r(){
-	
+	$("#pass").val("");
 	$("#pageContainer").animate({"margin-left":"0"},{duration:300, complete: function(){$("#result").html("");}});
 }
 
@@ -212,7 +409,31 @@ function initPage(){
 	      $('#c1').prop('checked', true);  
 	}
 
+	initBubbleCont($("#technologycontainer"));
+
+	function initBubbleCont(container){
+		var html='';
+		var conttitle = [{title:"Front End",contname:"frontendbubbles"},{title:"Back End",contname:"backendbubbles"}, {title:"Special Techniques",contname:"specialtechbubbles"}];
+		for(var i=0; i<conttitle.length; i++){
+			var bubble = conttitle[i];
+			console.log("this is"+bubble);
+			html = html+bubbleHtml(bubble);
+		}
+		container.html(html);
+
+		function bubbleHtml(bubble){
+			return '<div id="technology'+bubble.contname+'" class="title"><h1 id="weltitle">Technology    <br><small>'+bubble.title+'</small></h1></div>'+
+							'<div id="techbubblecontainer">'+
+								'<div id="'+bubble.contname+'">'+
+								'</div>'+
+								
+							'</div>';
+
+		}
+	}
+
 	initBubbleData($("#frontendbubbles"), fbubbleData);
+	initBubbleData($("#backendbubbles"), bbubbleData);
 	
 	function initBubbleData(container , data){
 		var html='';
